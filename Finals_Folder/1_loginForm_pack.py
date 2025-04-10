@@ -13,7 +13,7 @@ sep_frame = tk.Frame()
 # Login Label
 login_label = tk.Label(frame, text="Log in", font=("Arial", 30))
 
-# Entry
+# Entries
 user_entry = tk.Entry(frame, font=("Arial", 19))
 pass_entry = tk.Entry(frame, font=("Arial", 19))
 
@@ -31,6 +31,7 @@ rem_cb = tk.Checkbutton(frame, text="Remember Me", variable=var1, font=("Arial",
 # Forget and Create Label
 forgpass_label = tk.Label(frame, text="Forgot Password?", fg= "dodgerblue2", font=("Arial", 12))
 create_label = tk.Label(sep_frame, text="Create an Account", fg= "dodgerblue2", font=("Arial", 12))
+
 
 # Packing
 login_label.pack(pady=20)
