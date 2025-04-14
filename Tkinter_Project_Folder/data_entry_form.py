@@ -25,6 +25,12 @@ middle_name_entry = tk.Entry(user_info_frame)
 last_name_label = tk.Label(user_info_frame, text= "Last Name:", font= ("arial normal", 10))
 last_name_entry = tk.Entry(user_info_frame)
 
+# Image
+image_file = tk.PhotoImage(file = r'C:\Users\M S I\Downloads\wallhaven-m38z5y.png')
+image = image_file.subsample(6, 6)
+
+Label(user_info_frame, image = image).grid(row =0, column =5,
+       columnspan = 3, rowspan = 3, padx = 111, pady = 10)
 
 # User Info Grid
 first_name_label.grid(row=0, column=0, pady=5, sticky= "e")
