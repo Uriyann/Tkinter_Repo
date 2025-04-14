@@ -52,14 +52,14 @@ month_entry = ttk.Combobox(second_frame, values= [
                                                         "May", "June", "July", "August",
                                                         "September", "October", "November", "December"
                                                     ], state= "readonly", font= ("arial normal", 10), width=10)
-days = list(range(1, 31))
+days = list(range(1, 32))
 day_entry = ttk.Combobox(second_frame, values= days, state= "readonly", font= ("arial normal", 10), width=5)
 years = list(range(1950, 2051))
 year_entry = ttk.Combobox(second_frame, values= years, state= "readonly", font= ("arial normal", 10), width=5)
 
 # Gender
 gender_label = tk.Label(second_frame, text= "Gender:", font= ("arial normal", 10))
-gender = IntVar()
+gender = tk.StringVar()
 male_entry = tk.Radiobutton(second_frame, text="Male", variable=gender, value="Male")
 female_entry = tk.Radiobutton(second_frame, text="Female", variable=gender, value="Female")
 
@@ -85,8 +85,8 @@ year_entry.set("YYYY")
 
 # Gender Grid
 gender_label.grid(row=1, column=0, pady=5, padx=5, sticky= "e")
-male_entry.grid(row=1, column=1, pady=5, padx=2)
-female_entry.grid(row=2, column=1, pady=5, padx=2)
+male_entry.grid(row=1, column=1, sticky="w")
+female_entry.grid(row=1, column=2, sticky="w", pady=5)
 
 # Birthplace Grid
 birthplace_label.grid(row=1, column=2, pady=5, padx=5, sticky= "e")
@@ -143,8 +143,11 @@ language_label.grid(row=1, column=2, pady=5, padx=5, sticky= "e")
 language_entry.grid(row=1, column=3, pady=5, padx=2)
 language_entry.set("Select Language")
 
-# Fourth Frame
 
+# Configuration
+frame.columnconfigure(0, weight=1)
 
+window.columnconfigure(0, weight=1)
+window.rowconfigure(0, weight=1)
 
 window.mainloop()
