@@ -26,7 +26,7 @@ last_name_label = tk.Label(user_info_frame, text= "Last Name:", font= ("arial no
 last_name_entry = tk.Entry(user_info_frame)
 
 
-# Names' Info
+# User Info Grid
 first_name_label.grid(row=0, column=0, pady=5, sticky= "e")
 first_name_entry.grid(row=0, column=1, pady=3, padx=3)
 
@@ -68,24 +68,24 @@ birthplace_label = tk.Label(second_frame, text= "Birthplace:", font= ("arial nor
 birthplace_entry = tk.Entry(second_frame, width=15)
 
 
-# Secondary Frame Info
+# Secondary Frame Info Grid
 
 # Age Grid
 age_label.grid(row=4, column=0, pady=5, padx=5, sticky= "e")
 age_entry.grid(row=4, column=1, pady=5, padx=5)
 
-# Birthdate
+# Birthdate Grid
 birthdate_label.grid(row=4, column=2, pady=5, padx=5, sticky= "e")
 month_entry.grid(row=4, column=3, pady=5, padx=2)
 day_entry.grid(row=4, column=4, pady=5, padx=2)
 year_entry.grid(row=4, column=5, pady=5, padx=2)
 
-# Gender
+# Gender Grid
 gender_label.grid(row=5, column=0, pady=5, padx=5, sticky= "e")
 male_entry.grid(row=5, column=1, pady=5, padx=2)
 female_entry.grid(row=6, column=1, pady=5, padx=2)
 
-# Birthplace
+# Birthplace Grid
 birthplace_label.grid(row=5, column=2, pady=5, padx=5, sticky= "e")
 birthplace_entry.grid(row=5, column=3, pady=5, padx=2)
 
@@ -106,7 +106,8 @@ marital_entry = ttk.Combobox(third_frame, values= ["Single", "Married", "Divorce
 religion_label = tk.Label(third_frame, text= "Religion:", font= ("arial normal", 10))
 religion_entry = ttk.Combobox(third_frame, values= ["Roman Catholic", "Iglesia", "Muslim"], state= "readonly", font= ("arial normal", 10), width=15)
 
-# Third Frame Info
+
+# Third Frame Info Grid
 
 # Nationality Grid
 nationality_label.grid(row=8, column=0, pady=5, padx=5, sticky= "e")
