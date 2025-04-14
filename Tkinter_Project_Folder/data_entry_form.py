@@ -5,7 +5,7 @@ from tkinter import *
 
 window = tk.Tk()
 window.title("Login Form")
-window.geometry('600x600')
+window.geometry('600x500')
 
 # Frame
 frame = tk.Frame(window)
