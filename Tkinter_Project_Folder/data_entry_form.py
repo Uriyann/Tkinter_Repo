@@ -4,7 +4,7 @@ from tkinter import *
 
 
 window = tk.Tk()
-window.title("Login Form")
+window.title("Data Entry Form")
 window.geometry('600x500')
 
 # Frame
