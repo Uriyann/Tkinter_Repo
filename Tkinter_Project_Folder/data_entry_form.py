@@ -5,7 +5,11 @@ from tkinter import *
 
 window = tk.Tk()
 window.title("Data Entry Form")
-window.geometry('800x600')
+window.geometry('800x800')
+
+def data_enter():
+    
+
 
 # Frame
 frame = tk.Frame(window)
@@ -45,14 +49,14 @@ last_name_entry.grid(row=2, column=1, pady=3)
 
 # Secondary Frame
 second_frame = tk.LabelFrame(frame)
-second_frame.grid(row=1, column=0, sticky= NSEW, pady=10, padx=20)
+second_frame.grid(row=1, column=0, sticky= NSEW, pady=5, padx=20)
 
 # Age
 age_label = tk.Label(second_frame, text= "Age:", font= ("arial normal", 10))
 age_entry = tk.Spinbox(second_frame, from_=0, to=100, width=15)
 
 # Birthdate
-birthdate_label = tk.Label(second_frame, text= "Birthdate MM/dd/YYYY:", font= ("arial normal", 10))
+birthdate_label = tk.Label(second_frame, text= "Birthdate:", font= ("arial normal", 10))
 month_entry = ttk.Combobox(second_frame, values= ["January", "February", "March", "April",
                                                   "May", "June", "July", "August",
                                                   "September", "October", "November", "December"], 
@@ -64,7 +68,7 @@ year_entry = ttk.Combobox(second_frame, values= years, state= "readonly", font= 
 
 # Gender
 gender_label = tk.Label(second_frame, text= "Gender:", font= ("arial normal", 10))
-gender = tk.StringVar()
+gender = tk.IntVar()
 male_entry = tk.Radiobutton(second_frame, text="Male", variable=gender, value="Male")
 female_entry = tk.Radiobutton(second_frame, text="Female", variable=gender, value="Female")
 
@@ -79,28 +83,30 @@ birthplace_entry = tk.Entry(second_frame, width=15)
 age_label.grid(row=0, column=0, pady=5, padx=5, sticky= "e")
 age_entry.grid(row=0, column=1, pady=5, padx=5)
 
+tk.Label(second_frame, text="").grid(row=0, column=2, padx=21)
+
 # Birthdate Grid
-birthdate_label.grid(row=0, column=2, pady=5, padx=5, sticky= "e")
-month_entry.grid(row=0, column=3, pady=5, padx=2)
+birthdate_label.grid(row=0, column=3, pady=5, padx=5, sticky= "e")
+month_entry.grid(row=0, column=4, pady=5, padx=2)
 month_entry.set("MM")
-day_entry.grid(row=0, column=4, pady=5, padx=2)
+day_entry.grid(row=0, column=5, pady=5, padx=2)
 day_entry.set("dd")
-year_entry.grid(row=0, column=5, pady=5, padx=2)
+year_entry.grid(row=0, column=6, pady=5, padx=2)
 year_entry.set("YYYY")
 
 # Gender Grid
 gender_label.grid(row=1, column=0, pady=5, padx=5, sticky= "e")
 male_entry.grid(row=1, column=1, sticky="w")
-female_entry.grid(row=1, column=2, sticky="w", pady=5)
+female_entry.grid(row=1, column=1, sticky="e")
 
 # Birthplace Grid
-birthplace_label.grid(row=1, column=2, pady=5, padx=5, sticky= "e")
-birthplace_entry.grid(row=1, column=3, pady=5, padx=2)
+birthplace_label.grid(row=1, column=3, pady=5, padx=5, sticky= "e")
+birthplace_entry.grid(row=1, column=4, pady=5, padx=2)
 
 
 # Third Frame
 third_frame = tk.LabelFrame(frame)
-third_frame.grid(row=2, column=0, sticky= NSEW, pady=10, padx=20)
+third_frame.grid(row=2, column=0, sticky= NSEW, pady=5, padx=20)
 
 # Nationality
 nationality_label = tk.Label(third_frame, text= "Nationality:", font= ("arial normal", 10))
@@ -152,7 +158,7 @@ language_entry.set("Select Language")
 
 # Fourth Frame
 fourth_frame = tk.LabelFrame(frame)
-fourth_frame.grid(row=3, column=0, sticky= NSEW, pady=10, padx=20)
+fourth_frame.grid(row=3, column=0, sticky= NSEW, pady=5, padx=20)
 
 # Street/No
 street_label = tk.Label(fourth_frame, text= "Street/No:", font= ("arial normal", 10))
@@ -204,7 +210,46 @@ province_label.grid(row=1, column=3, pady=5, padx=5, sticky= "e")
 province_entry.grid(row=1, column=4, pady=5, padx=2)
 province_entry.set("Select Province")
 
+
 # Fifth Frame
+fifth_frame = tk.LabelFrame(frame)
+fifth_frame.grid(row=4, column=0, sticky= NSEW, pady=5, padx=20)
+
+# Email
+email_label = tk.Label(fifth_frame, text= "Email:", font= ("arial normal", 10))
+email_entry = tk.Entry(fifth_frame, width= 23)
+
+# Phone Number
+phone_num_label = tk.Label(fifth_frame, text= "Phone No.:", font= ("arial normal", 10))
+phone_num_entry = tk.Entry(fifth_frame, width= 23)
+
+# Fifth Frame Grid
+
+tk.Label(fifth_frame, text="").grid(row=0, column=0, padx=21)
+
+# Email Grid
+email_label.grid(row=0, column=1, pady=5, padx=5, sticky= "e")
+email_entry.grid(row=0, column=2, pady=5, padx=2)
+
+tk.Label(fifth_frame, text="").grid(row=0, column=3, padx=19)
+
+# Phone Number Grid
+phone_num_label.grid(row=0, column=4, pady=5, padx=5, sticky= "e")
+phone_num_entry.grid(row=0, column=5, pady=5, padx=2)
+
+
+# Terms Frame
+terms_frame = tk.LabelFrame(frame)
+terms_frame.grid(row=5, column=0, sticky= NSEW, pady=5, padx=20)
+
+accept_var = tk.IntVar()
+terms_check = tk.Checkbutton(terms_frame, text= "I accept the terms and conditions.", font= ("arial normal", 10), variable=accept_var)
+terms_check.grid(row=0, column=0)
+
+
+# Data Button
+button = tk.Button(frame, text= "Enter Data", command= data_enter, font= ("arial normal", 10))
+button.grid(row=6, column=0, sticky= NSEW, pady=10, padx=20)
 
 # Configuration
 frame.columnconfigure(0, weight=1)
