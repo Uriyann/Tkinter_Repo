@@ -26,7 +26,7 @@ last_name_label = tk.Label(user_info_frame, text= "Last Name:", font= ("arial no
 last_name_entry = tk.Entry(user_info_frame)
 
 # Image
-image_file = tk.PhotoImage(file = r'C:\Users\M S I\Downloads\wallhaven-m38z5y.png')
+image_file = tk.PhotoImage(file = r'C:\Users\M S I\Desktop\Tkinter_Repository\Tkinter_Project_Folder\wallhaven-m38z5y.png')
 image = image_file.subsample(6, 6)
 
 Label(user_info_frame, image = image).grid(row =0, column =5,
