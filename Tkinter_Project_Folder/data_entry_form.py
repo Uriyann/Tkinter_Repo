@@ -1,6 +1,8 @@
+import os
 import tkinter as tk
 from tkinter import ttk
 from tkinter import *
+from tkinter import messagebox
 
 
 window = tk.Tk()
@@ -8,59 +10,71 @@ window.title("Data Entry Form")
 window.geometry('800x800')
 
 def data_enter():
-    
-    # User Name Info
-    first_name = first_name_entry.get()
-    middle_name = middle_name_entry.get()
-    last_name = last_name_entry.get()
+       accept_terms = accept_var.get()
 
-    # 2nd Info
-    age = age_entry.get()
-    birth_month = month_entry.get()
-    birth_day = day_entry.get()
-    birth_year = year_entry.get()
+       if accept_terms == "Accepted":
+       
+              os.system("cls")
 
-    birth_place = birthplace_entry.get()
+              # User Name Info
+              first_name = first_name_entry.get()
+              middle_name = middle_name_entry.get()
+              last_name = last_name_entry.get()
 
-    # 3rd Info
-    nationality = nationality_entry.get()
-    marital = marital_entry.get()
-    religion = religion_entry.get()
-    language = language_entry.get()
+              if first_name and middle_name and last_name:
 
-    # 4th Info
-    street = street_entry.get()
-    street_num = street_num_entry.get()
-    brgy = brgy_entry.get()
-    zip_code = zip_code_entry.get()
-    city = city_entry.get()
-    province = province_entry.get()
+                     # 2nd Info
+                     age = age_entry.get()
+                     birth_month = month_entry.get()
+                     birth_day = day_entry.get()
+                     birth_year = year_entry.get()
 
-    # 5th Info
-    email = email_entry.get()
-    phone_num = phone_num_entry.get()
+                     birth_place = birthplace_entry.get()
 
-    print("Data Entry Form:\n\n" \
-          "First Name:",first_name,
-          "\nMiddle Name:",middle_name,
-          "\nLast Name:",last_name,
-          
-          "\n\nAge:",age,
-          f"\nBirth Date: {birth_month}, {birth_day}, {birth_year}"
-          "\nBirth Place:",birth_place,
-          
-          "\n\nNationality:",nationality,
-          "\nMarital Status:",marital,
-          "\nReligion:",religion,
-          "\nLanguage:",language,
-          
-          f"\n\nStreet/No.: {street}, {street_num}"
-          "\nBarangay:",brgy,
-          f"\nZip Code/City: {zip_code}, {city}"
-          "\nProvince:",province,
-          
-          "\n\nEmail:",email,
-          "\nPhone Number:",phone_num)
+                     # 3rd Info
+                     nationality = nationality_entry.get()
+                     marital = marital_entry.get()
+                     religion = religion_entry.get()
+                     language = language_entry.get()
+
+                     # 4th Info
+                     street = street_entry.get()
+                     street_num = street_num_entry.get()
+                     brgy = brgy_entry.get()
+                     zip_code = zip_code_entry.get()
+                     city = city_entry.get()
+                     province = province_entry.get()
+
+                     # 5th Info
+                     email = email_entry.get()
+                     phone_num = phone_num_entry.get()
+
+                     print("Data Entry Form:\n\n" \
+                            "First Name:",first_name,
+                            "\nMiddle Name:",middle_name,
+                            "\nLast Name:",last_name,
+                            
+                            "\n\nAge:",age,
+                            f"\nBirth Date: {birth_month}, {birth_day}, {birth_year}"
+                            "\nBirth Place:",birth_place,
+                            
+                            "\n\nNationality:",nationality,
+                            "\nMarital Status:",marital,
+                            "\nReligion:",religion,
+                            "\nLanguage:",language,
+                            
+                            f"\n\nStreet/No.: {street}, {street_num}"
+                            "\nBarangay:",brgy,
+                            f"\nZip Code/City: {zip_code}, {city}"
+                            "\nProvince:",province,
+                            
+                            "\n\nEmail:",email,
+                            "\nPhone Number:",phone_num)
+              else:
+                     messagebox.showwarning(title= "Error", message= "Error. Input Required.")
+           
+       else:
+              messagebox.showwarning(title= "Error", message= "You have not accepted the terms and conditions.")
 
 
 # Frame
@@ -291,11 +305,11 @@ phone_num_entry.grid(row=0, column=5, pady=5, padx=2)
 
 
 # Terms Frame
-terms_frame = tk.LabelFrame(frame)
+terms_frame = tk.LabelFrame(frame, text="Terms & Condition", font= ("times new roman", 15))
 terms_frame.grid(row=5, column=0, sticky= NSEW, pady=5, padx=20)
 
-accept_var = tk.IntVar()
-terms_check = tk.Checkbutton(terms_frame, text= "I accept the terms and conditions.", font= ("arial normal", 10), variable=accept_var)
+accept_var = tk.StringVar(value="Not Accepted")
+terms_check = tk.Checkbutton(terms_frame, text= "I accept the terms and conditions.", font= ("arial normal", 10), variable= accept_var, onvalue= "Accepted", offvalue= "Not Accepted")
 terms_check.grid(row=0, column=0)
 
 
