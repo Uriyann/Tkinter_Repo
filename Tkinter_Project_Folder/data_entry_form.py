@@ -5,7 +5,7 @@ from tkinter import *
 
 window = tk.Tk()
 window.title("Data Entry Form")
-window.geometry('600x500')
+window.geometry('800x600')
 
 # Frame
 frame = tk.Frame(window)
@@ -53,11 +53,10 @@ age_entry = tk.Spinbox(second_frame, from_=0, to=100, width=15)
 
 # Birthdate
 birthdate_label = tk.Label(second_frame, text= "Birthdate MM/dd/YYYY:", font= ("arial normal", 10))
-month_entry = ttk.Combobox(second_frame, values= [
-                                                        "January", "February", "March", "April",
-                                                        "May", "June", "July", "August",
-                                                        "September", "October", "November", "December"
-                                                    ], state= "readonly", font= ("arial normal", 10), width=10)
+month_entry = ttk.Combobox(second_frame, values= ["January", "February", "March", "April",
+                                                  "May", "June", "July", "August",
+                                                  "September", "October", "November", "December"], 
+                                                  state= "readonly", font= ("arial normal", 10), width=10)
 days = list(range(1, 32))
 day_entry = ttk.Combobox(second_frame, values= days, state= "readonly", font= ("arial normal", 10), width=5)
 years = list(range(1950, 2051))
@@ -117,8 +116,10 @@ marital_entry = ttk.Combobox(third_frame, values= ["Single", "Married", "Divorce
 
 # Religion
 religion_label = tk.Label(third_frame, text= "Religion:", font= ("arial normal", 10))
-religion_entry = ttk.Combobox(third_frame, values= ["Christianity", "Islam", "Hinduism", "Buddhism", "Judaism", "Sikhism", "Atheism",
-                                                    "Agnosticism", "Taoism", "Shinto", "Bahá'í Faith", "Jainism", "Paganism", "Other"], 
+religion_entry = ttk.Combobox(third_frame, values= ["Roman Catholic", "Iglesia ni Cristo", "Evangelical Christianity", "Aglipayan (Philippine Independent Church)",
+                                                    "Islam", "Seventh-day Adventist", "Baptist", "Jehovah's Witnesses", "Born Again Christianity",
+                                                    "Methodist", "Orthodox Christianity", "Church of Christ (Disciples)", "Buddhism",
+                                                    "Hinduism", "Other"], 
                                                     state= "readonly", font= ("arial normal", 10))
 
 language_label = tk.Label(third_frame, text= "Language:", font= ("arial normal", 10))
@@ -149,6 +150,61 @@ language_label.grid(row=1, column=2, pady=5, padx=5, sticky= "e")
 language_entry.grid(row=1, column=3, pady=5, padx=2)
 language_entry.set("Select Language")
 
+# Fourth Frame
+fourth_frame = tk.LabelFrame(frame)
+fourth_frame.grid(row=3, column=0, sticky= NSEW, pady=10, padx=20)
+
+# Street/No
+street_label = tk.Label(fourth_frame, text= "Street/No:", font= ("arial normal", 10))
+street_entry = tk.Entry(fourth_frame, width= 21)
+street_num_entry = tk.Entry(fourth_frame, width= 9)
+
+# Barangay
+brgy_label = tk.Label(fourth_frame, text= "Barangay:", font= ("arial normal", 10))
+brgy_entry = tk.Entry(fourth_frame, width= 23)
+
+# Zip Code/City
+zip_code_city_label = tk.Label(fourth_frame, text= "ZIP Code/City:", font= ("arial normal", 10))
+zip_code_entry = tk.Entry(fourth_frame, width= 9)
+city_entry = tk.Entry(fourth_frame, width= 21)
+
+# Province
+province_label = tk.Label(fourth_frame, text= "Country:", font= ("arial normal", 10))
+province_entry = ttk.Combobox(fourth_frame, values= [# Luzon
+                                                    "Ilocos Norte", "Ilocos Sur", "La Union", "Pangasinan", "Nueva Ecija", "Pampanga",
+                                                    "Bulacan", "Rizal", "Laguna", "Batangas", "Quezon", "Palawan",
+       
+                                                    # Visayas
+                                                    "Cebu", "Bohol", "Negros Occidental", "Negros Oriental", "Leyte", "Samar", "Aklan",
+                                                    "Capiz", "Iloilo",
+       
+                                                    # Mindanao
+                                                    "Davao del Sur", "Davao del Norte", "Bukidnon", "Misamis Oriental", "Zamboanga del Sur",
+                                                    "Lanao del Norte", "South Cotabato", "Maguindanao"], 
+                                                    state= "readonly", font= ("arial normal", 10), width= 17)
+
+# Fourth Frame Info Grid
+
+# Street Grid
+street_label.grid(row=0, column=0, pady=5, padx=5, sticky= "e")
+street_entry.grid(row=0, column=1, columnspan=2, pady=5, padx=2, sticky= "w")
+street_num_entry.grid(row=0, column=2, pady=5, padx=2, sticky= "e")
+
+# Barangay Grid
+brgy_label.grid(row=0, column=3, pady=5, padx=5, sticky= "e")
+brgy_entry.grid(row=0, column=4, pady=5, padx=2)
+
+# City Grid
+zip_code_city_label.grid(row=1, column=0, pady=5, padx=5, sticky= "e")
+zip_code_entry.grid(row=1, column=1, pady=5, padx=2, sticky=  "w")
+city_entry.grid(row=1, column=2, pady=5, padx=2, sticky= "w")
+
+# Province Grid
+province_label.grid(row=1, column=3, pady=5, padx=5, sticky= "e")
+province_entry.grid(row=1, column=4, pady=5, padx=2)
+province_entry.set("Select Province")
+
+# Fifth Frame
 
 # Configuration
 frame.columnconfigure(0, weight=1)
