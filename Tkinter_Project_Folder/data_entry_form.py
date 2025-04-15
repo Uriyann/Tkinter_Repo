@@ -9,6 +9,58 @@ window.geometry('800x800')
 
 def data_enter():
     
+    # User Name Info
+    first_name = first_name_entry.get()
+    middle_name = middle_name_entry.get()
+    last_name = last_name_entry.get()
+
+    # 2nd Info
+    age = age_entry.get()
+    birth_month = month_entry.get()
+    birth_day = day_entry.get()
+    birth_year = year_entry.get()
+
+    birth_place = birthplace_entry.get()
+
+    # 3rd Info
+    nationality = nationality_entry.get()
+    marital = marital_entry.get()
+    religion = religion_entry.get()
+    language = language_entry.get()
+
+    # 4th Info
+    street = street_entry.get()
+    street_num = street_num_entry.get()
+    brgy = brgy_entry.get()
+    zip_code = zip_code_entry.get()
+    city = city_entry.get()
+    province = province_entry.get()
+
+    # 5th Info
+    email = email_entry.get()
+    phone_num = phone_num_entry.get()
+
+    print("Data Entry Form:\n\n" \
+          "First Name: ",first_name,
+          "\nMiddle Name: ",middle_name,
+          "\nLast Name: ",last_name,
+          
+          "\n\nAge:",age,
+          f"\nBirth Date: {birth_month}, {birth_day}, {birth_year}"
+          "\nBirth Place: ",birth_place,
+          
+          "\n\nNationality: ",nationality,
+          "\nMarital Status: ",marital,
+          "\nReligion: ",religion,
+          "\nLanguage: ",language,
+          
+          f"\n\nStreet/No.: {street}, {street_num}"
+          "\nBarangay: ",brgy,
+          f"\nZip Code/City: {zip_code}, {city}"
+          "\nProvince: ",province,
+          
+          "\n\nEmail: ",email,
+          "\nPhone Number: ",phone_num)
 
 
 # Frame
