@@ -41,26 +41,26 @@ def data_enter():
     phone_num = phone_num_entry.get()
 
     print("Data Entry Form:\n\n" \
-          "First Name: ",first_name,
-          "\nMiddle Name: ",middle_name,
-          "\nLast Name: ",last_name,
+          "First Name:",first_name,
+          "\nMiddle Name:",middle_name,
+          "\nLast Name:",last_name,
           
           "\n\nAge:",age,
           f"\nBirth Date: {birth_month}, {birth_day}, {birth_year}"
-          "\nBirth Place: ",birth_place,
+          "\nBirth Place:",birth_place,
           
-          "\n\nNationality: ",nationality,
-          "\nMarital Status: ",marital,
-          "\nReligion: ",religion,
-          "\nLanguage: ",language,
+          "\n\nNationality:",nationality,
+          "\nMarital Status:",marital,
+          "\nReligion:",religion,
+          "\nLanguage:",language,
           
           f"\n\nStreet/No.: {street}, {street_num}"
-          "\nBarangay: ",brgy,
+          "\nBarangay:",brgy,
           f"\nZip Code/City: {zip_code}, {city}"
-          "\nProvince: ",province,
+          "\nProvince:",province,
           
-          "\n\nEmail: ",email,
-          "\nPhone Number: ",phone_num)
+          "\n\nEmail:",email,
+          "\nPhone Number:",phone_num)
 
 
 # Frame
