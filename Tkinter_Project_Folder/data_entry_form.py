@@ -9,73 +9,6 @@ window = tk.Tk()
 window.title("Data Entry Form")
 window.geometry('800x800')
 
-def data_enter():
-       accept_terms = accept_var.get()
-
-       if accept_terms == "Accepted":
-       
-              os.system("cls")
-
-              # User Name Info
-              first_name = first_name_entry.get()
-              middle_name = middle_name_entry.get()
-              last_name = last_name_entry.get()
-
-              if first_name and middle_name and last_name:
-
-                     # 2nd Info
-                     age = age_entry.get()
-                     birth_month = month_entry.get()
-                     birth_day = day_entry.get()
-                     birth_year = year_entry.get()
-
-                     birth_place = birthplace_entry.get()
-
-                     # 3rd Info
-                     nationality = nationality_entry.get()
-                     marital = marital_entry.get()
-                     religion = religion_entry.get()
-                     language = language_entry.get()
-
-                     # 4th Info
-                     street = street_entry.get()
-                     street_num = street_num_entry.get()
-                     brgy = brgy_entry.get()
-                     zip_code = zip_code_entry.get()
-                     city = city_entry.get()
-                     province = province_entry.get()
-
-                     # 5th Info
-                     email = email_entry.get()
-                     phone_num = phone_num_entry.get()
-
-                     print("Data Entry Form:\n\n" \
-                            "First Name:",first_name,
-                            "\nMiddle Name:",middle_name,
-                            "\nLast Name:",last_name,
-                            
-                            "\n\nAge:",age,
-                            f"\nBirth Date: {birth_month}, {birth_day}, {birth_year}"
-                            "\nBirth Place:",birth_place,
-                            
-                            "\n\nNationality:",nationality,
-                            "\nMarital Status:",marital,
-                            "\nReligion:",religion,
-                            "\nLanguage:",language,
-                            
-                            f"\n\nStreet/No.: {street}, {street_num}"
-                            "\nBarangay:",brgy,
-                            f"\nZip Code/City: {zip_code}, {city}"
-                            "\nProvince:",province,
-                            
-                            "\n\nEmail:",email,
-                            "\nPhone Number:",phone_num)
-              else:
-                     messagebox.showwarning(title= "Error", message= "Error. Input Required.")
-           
-       else:
-              messagebox.showwarning(title= "Error", message= "You have not accepted the terms and conditions.")
-
 
 # Frame
 frame = tk.Frame(window)
@@ -94,13 +27,6 @@ middle_name_entry = tk.Entry(user_info_frame)
 
 last_name_label = tk.Label(user_info_frame, text= "Last Name:", font= ("arial normal", 10))
 last_name_entry = tk.Entry(user_info_frame)
-
-# Image
-image_file = tk.PhotoImage(file = r'C:\Users\M S I\Desktop\Tkinter_Repository\Tkinter_Project_Folder\wallhaven-m38z5y.png')
-image = image_file.subsample(6, 6)
-
-Label(user_info_frame, image = image).grid(row =0, column =5,
-       columnspan = 3, rowspan = 3, padx = 111, pady = 10)
 
 # User Info Grid
 first_name_label.grid(row=0, column=0, pady=5, sticky= "e")
@@ -314,7 +240,7 @@ terms_check.grid(row=0, column=0)
 
 
 # Data Button
-button = tk.Button(frame, text= "Enter Data", command= data_enter, font= ("arial normal", 10))
+button = tk.Button(frame, text= "Enter Data", font= ("arial normal", 10))
 button.grid(row=6, column=0, sticky= NSEW, pady=10, padx=20)
 
 # Configuration
